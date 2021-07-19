@@ -1,0 +1,68 @@
+@import '../../basic/variables.scss';
+.header {
+    position: relative;
+    background-color: $violet;
+    border-bottom-right-radius: 41px;
+    padding: 8px 0 72px;
+    .section-title {
+        color: $white;
+        text-align: center;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 32px;
+    }
+    .info-wrapp {
+        display: flex;
+        justify-content: space-between;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__title {
+            font-size: 12px;
+            line-height: 16px;
+            color: $white;
+        }
+        &__number {
+            color: $white;
+            font-weight: 600;
+            font-size: 56px;
+            line-height: 56px;
+        }
+    }
+    .addBtn {
+        cursor: pointer;
+        border: none;
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        bottom: -24px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        border-radius: 11px;
+        background-color: $green;
+        z-index: 2;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 21px;
+            height: 2px;
+            background-color: $white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            width: 2px;
+            height: 21px;
+            background-color: $white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+}

@@ -1,0 +1,132 @@
+@import '../../basic/variables.scss';
+.todo-section {
+    position: relative;
+    background-color: #FFFFFF;
+    padding: 92px 0 40px;
+    border-top-left-radius: 41px;
+    &:before {
+        position: absolute;
+        content: '';
+        width: 64px;
+        height: 64px;
+        background-color: $violet;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    .list {
+        margin-bottom: 26px;
+    }
+    input[type=checkbox] {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    input[type=checkbox]+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+    }
+    input[type=checkbox]+label::before {
+        content: '';
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid $violet !important;
+        border-radius: 0.25em;
+        margin-right: 0.5em;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+    }
+    input[type=checkbox]:checked+label::before {
+        border-color: $violet;
+        background-color: $violet;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+        background-size: 75%;
+        background-position: center;
+    }
+    .todo {
+        padding-top: 20px;
+        border-bottom: 1px solid #C7C7C7;
+        &__wrapp-info {
+            display: flex
+        }
+        &__control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__date {
+            font-weight: normal;
+            font-size: 12px;
+            color: $violet
+        }
+        &__wrapp-btn {
+            display: flex;
+            align-items: center;
+        }
+        &__delete {
+            margin-left: 15px;
+        }
+        &__text {
+            padding: 4px 10px 8px 24px;
+            max-width: 512px;
+            width: 100%;
+            border: none;
+            outline: none;
+            &::placeholder {
+                color: #BBBBBB;
+                font-size: 14px;
+            }
+        }
+    }
+    .create-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-color: $green;
+        max-width: 208px;
+        width: 100%;
+        text-align: center;
+        border-radius: 11px;
+        padding: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #FFFFFF;
+        margin: 0 auto;
+    }
+    .plus {
+        position: relative;
+        width: 14px;
+        height: 14px;
+        margin-right: 13px;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 14px;
+            height: 1px;
+            background-color: $white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            width: 1px;
+            height: 14px;
+            background-color: $white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .todoActive {
+        border-bottom: 1px solid $violet;
+    }
+}
